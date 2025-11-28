@@ -1,9 +1,678 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Art of Technology</title>
+  <meta charset="UTF-8" />
+  <title>Art of Technology | Mobile Phone & Tech Services | Gatesville, TX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Art of Technology offers mobile phone repair, device cleanups, and computer services in Gatesville, TX and surrounding areas." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #1c7c54;
+      --green-light: #e5f7ef;
+      --accent: #ff8fb4;
+      --accent-soft: #ffe3ee;
+      --bg: #ffffff;
+      --text: #20313a;
+      --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
+      --radius-lg: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffe8f2, #b7f3cf);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--green);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(28,124,84,0.35);
+      border: none;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 2.75rem;
+      display: grid;
+      grid-template-columns: minmax(0,1.25fr) minmax(0,1fr);
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.1rem, 3.1vw + 1.5rem, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      color: var(--green);
+    }
+
+    .hero-copy h1 span {
+      color: var(--accent);
+    }
+
+    .hero-copy p.lead {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid rgba(28,124,84,0.16);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ffb36f);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(255,143,180,0.45);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--green);
+      border: 1px solid rgba(28,124,84,0.28);
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: #6b7a84;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f4fff9);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid #e4f3ea;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--green);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      color: var(--accent);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      color: #7b8c96;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--green);
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: #6b7a84;
+      margin-bottom: 1.7rem;
+    }
+
+    /* Highlights */
+    .highlights-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .highlight-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.2rem;
+      border: 1px solid #f0f1f3;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+      color: var(--green);
+    }
+
+    .highlight-card p {
+      font-size: 0.9rem;
+      color: #55636e;
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-text p {
+      margin-bottom: 0.9rem;
+      font-size: 0.96rem;
+      color: #4b5963;
+    }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #a53a63;
+      border: 1px solid rgba(255,143,180,0.45);
+    }
+
+    .about-card {
+      background: var(--green-light);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.2rem;
+      border: 1px solid rgba(28,124,84,0.18);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      color: #264139;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      padding: 1.4rem 1.3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid #eff1f4;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      color: var(--green);
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+      color: #5b6872;
+    }
+
+    .contact-grid dl {
+      font-size: 0.9rem;
+    }
+
+    dt {
+      font-weight: 600;
+      color: #2a3c45;
+    }
+
+    dd {
+      margin: 0 0 0.5rem 0;
+      color: #4b5963;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.87rem;
+    }
+
+    .field label {
+      font-weight: 600;
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 11px;
+      border: 1px solid #d6dde2;
+      padding: 0.55rem 0.7rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255,143,180,0.25);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid #f0f1f3;
+      padding: 1.25rem 1.25rem 1.6rem;
+      font-size: 0.8rem;
+      color: #6c7a84;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 840px) {
+      .hero,
+      .about-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero {
+        padding-top: 1.75rem;
+      }
+      nav ul {
+        gap: 0.75rem;
+      }
+      .nav-cta {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>I LOVE YOU HEIDY</h1>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo">
+        <!-- Replace src with your actual logo file -->
+        <!-- <img src="art-of-technology-logo.png" alt="Art of Technology logo"> -->
+      </div>
+      <div class="brand-text">Art of Technology</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="#contact">Book Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Mobile phone repair &amp; <span>tech clean-ups</span> in Gatesville, TX</h1>
+      <p class="lead">
+        Art of Technology comes to you for fast phone repair, device clean-ups, and
+        custom computer services in and around Gatesville, Texas (76528).
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">Mobile service</span>
+        <span class="badge">Phones • PCs • Consoles</span>
+        <span class="badge">Family-owned in Gatesville</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">📱 Book a repair</a>
+        <a href="services.html" class="btn-secondary">💻 View all services</a>
+      </div>
+
+      <p class="hero-note">
+        From cracked screens and sluggish phones to full custom gaming PCs,
+        we make technology feel simple again.
+      </p>
+    </div>
+
+    <aside class="hero-card">
+      <h3>What we can help with:</h3>
+      <ul>
+        <li>iPhone &amp; Android screen and battery replacement</li>
+        <li>Phone storage clean-ups &amp; reorganization</li>
+        <li>Custom gaming PC builds &amp; upgrades</li>
+        <li>Laptop tune-ups, SSD installs &amp; virus removal</li>
+      </ul>
+      <div class="hero-tag">
+        Serving homes, small businesses &amp; busy families across Coryell County.
+      </div>
+    </aside>
+  </section>
+
+  <!-- Highlights -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">Why Art of Technology?</h2>
+      <p class="section-subtitle">
+        We’re a local husband-and-wife tech team focused on friendly service,
+        clear communication, and clean, reliable repairs.
+      </p>
+
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <h3>We come to you</h3>
+          <p>
+            No more driving to Waco or Killeen for simple fixes. We offer mobile
+            service in Gatesville and nearby towns so you can stay where you’re
+            comfortable.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Phone &amp; PC experts</h3>
+          <p>
+            Your wife specializes in mobile phone repair and clean-ups, while you
+            handle computers, custom PCs, and console care&mdash;covering the
+            whole house’s tech.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Clutter-free devices</h3>
+          <p>
+            We don’t just swap parts. We reorganize, clean, optimize, and educate
+            so your devices stay fast and easy to use.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner about-layout">
+      <div class="about-text">
+        <div class="about-tag">About us</div>
+        <h2 class="section-title">Family-owned tech help in Gatesville, TX</h2>
+        <p>
+          Art of Technology was created to bridge the gap between everyday people
+          and the devices they depend on. We’re based right here in Gatesville,
+          Texas, and we understand what it’s like when a phone breaks, a laptop
+          slows down, or storage runs out in the middle of life.
+        </p>
+        <p>
+          She focuses on mobile phone repair, clean-ups, and making phones easier
+          to use. You handle the heavier tech&mdash;custom gaming PC builds,
+          laptop upgrades, and console cleaning. Together, we offer honest,
+          down-to-earth tech service for neighbors, families, and small
+          businesses.
+        </p>
+        <p>
+          No jargon. No upselling. Just practical solutions that keep your tech
+          running the way it should.
+        </p>
+
+        <div class="about-pills">
+          <span class="pill">Locally owned</span>
+          <span class="pill">Mobile service</span>
+          <span class="pill">Phones + PCs</span>
+          <span class="pill">Patient, friendly help</span>
+        </div>
+      </div>
+
+      <aside class="about-card">
+        <h3>Service area</h3>
+        <p>
+          Based in <strong>Gatesville, TX 76528</strong> and serving:
+        </p>
+        <ul>
+          <li>Coryell County</li>
+          <li>Copperas Cove &amp; Fort Cavazos area</li>
+          <li>McGregor, Oglesby, Evant &amp; nearby communities</li>
+        </ul>
+        <p style="margin-top:0.7rem;">
+          Not sure if you’re in range? Reach out and we’ll let you know what we
+          can do.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner contact-grid">
+      <div>
+        <h2 class="section-title">Get in touch</h2>
+        <p class="section-subtitle">
+          Tell us what’s going on with your phone, computer or console and we’ll
+          get back with a quote and scheduling options.
+        </p>
+
+        <div class="contact-card">
+          <h3>Call or text</h3>
+          <p>
+            <strong>Phone:</strong> <a href="tel:555-555-5555">(555) 555-5555</a><br>
+            <strong>Email:</strong> <a href="mailto:info@artofttechnology.com">info@artofttechnology.com</a>
+          </p>
+          <p>
+            Hours: Monday – Saturday, 9:00 AM – 6:00 PM<br>
+            Mobile service in Gatesville &amp; surrounding areas.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-card">
+          <h3>Quick contact form</h3>
+          <p>Form can be wired up later to email or a service like Formspree.</p>
+          <form class="contact-form">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" type="tel" placeholder="Best number to reach you">
+            </div>
+            <div class="field">
+              <label for="device">Device</label>
+              <input id="device" type="text" placeholder="iPhone 13, Samsung S21, gaming PC, etc.">
+            </div>
+            <div class="field">
+              <label for="message">What do you need help with?</label>
+              <textarea id="message" placeholder="Broken screen, slow phone, new PC build, etc."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send (placeholder only)</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Art of Technology – Gatesville, TX.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // simple year updater
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
