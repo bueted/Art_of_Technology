@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | Art of Technology | Gatesville, TX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="View all phone repair, phone clean-up, computer, laptop and console services offered by Art of Technology in Gatesville, TX." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #1c7c54;
+      --green-light: #e5f7ef;
+      --accent: #ff8fb4;
+      --accent-soft: #ffe3ee;
+      --bg: #ffffff;
+      --text: #20313a;
+      --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
+      --radius-lg: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #f0f0f0;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffe8f2, #b7f3cf);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .brand-text {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--green);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(28,124,84,0.35);
+      border: none;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.4rem 1.25rem 2.6rem;
+    }
+
+    .page-title {
+      font-size: 2.1rem;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .page-subtitle {
+      font-size: 0.98rem;
+      color: #60707b;
+      margin-bottom: 1.8rem;
+    }
+
+    .services-section {
+      margin-bottom: 2.3rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      color: var(--green);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: #4d5b65;
+      margin-bottom: 1.1rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.05rem;
+      border: 1px solid #eff1f3;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.04);
+      font-size: 0.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--green);
+    }
+
+    .service-card p {
+      color: #566572;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.2rem;
+    }
+
+    .service-card li::before {
+      content: "•";
+      color: var(--accent);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #6f7c86;
+      margin-top: 0.4rem;
+    }
+
+    .pricing-table {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid #f1f2f4;
+    }
+
+    .pricing-table th {
+      background: var(--green-light);
+      color: #295645;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .cta-band {
+      margin-top: 1.6rem;
+      padding: 1.1rem 1.05rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent-soft), #fff6de);
+      border: 1px solid rgba(255,143,180,0.4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .cta-band p {
+      font-size: 0.94rem;
+      color: #5b4a56;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.93rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--accent), #ffb36f);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(255,143,180,0.45);
+    }
+
+    footer {
+      border-top: 1px solid #f0f1f3;
+      padding: 1.25rem 1.25rem 1.6rem;
+      font-size: 0.8rem;
+      color: #6c7a84;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 840px) {
+      nav ul {
+        gap: 0.75rem;
+      }
+      .nav-cta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div class="brand-text">Art of Technology</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a class="nav-cta" href="index.html#contact">Book Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">Services</h1>
+  <p class="page-subtitle">
+    Mobile phone repair, device clean-ups, computers, laptops and console care&mdash;
+    all from a local, family-owned tech team in Gatesville, TX.
+  </p>
+
+  <!-- Phone Repair -->
+  <section class="services-section" id="phones">
+    <div class="section-tag">Phones</div>
+    <h2 class="section-heading">Mobile phone repair</h2>
+    <p class="section-intro">
+      We repair most major phone brands including iPhone, Samsung, Google Pixel,
+      LG, and more. Parts and pricing may vary by model.
+    </p>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <h3>Screen replacement</h3>
+        <p>Cracked or shattered screen? We replace it with a high-quality part.</p>
+        <ul>
+          <li>Front glass &amp; LCD replacements</li>
+          <li>Touch issues and dead spots</li>
+          <li>Most repairs done same day</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Battery &amp; charging</h3>
+        <p>Fix phones that won’t hold a charge or are hard to plug in.</p>
+        <ul>
+          <li>Battery replacement</li>
+          <li>Charging port repair/cleaning</li>
+          <li>Power &amp; volume button issues</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Other phone repairs</h3>
+        <p>We’ll take a look and let you know the best option.</p>
+        <ul>
+          <li>Back glass &amp; camera glass</li>
+          <li>Speaker &amp; mic problems</li>
+          <li>Water damage evaluation</li>
+        </ul>
+      </article>
+    </div>
+
+    <table class="pricing-table">
+      <thead>
+      <tr><th>Phone service</th><th>Starting at</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Screen replacement</td><td>$80 – $180</td></tr>
+      <tr><td>Battery replacement</td><td>$40 – $70</td></tr>
+      <tr><td>Charging port repair</td><td>$40 – $70</td></tr>
+      <tr><td>Phone tune-up / cleanup</td><td>$30 – $50</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">Exact prices depend on the phone model and parts availability. We’ll always quote before any work is done.</p>
+  </section>
+
+  <!-- Phone Clean-up -->
+  <section class="services-section" id="phone-cleanup">
+    <div class="section-tag">Organization</div>
+    <h2 class="section-heading">Phone clean-ups &amp; reorganization</h2>
+    <p class="section-intro">
+      Perfect for anyone overwhelmed by storage warnings, cluttered photos, or
+      too many apps. We sit down with you and gently clean things up without
+      deleting anything important.
+    </p>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <h3>Storage clean-out</h3>
+        <p>Free up space so your phone can breathe.</p>
+        <ul>
+          <li>Remove duplicates &amp; blurry photos</li>
+          <li>Clear old downloads &amp; cache</li>
+          <li>Explain what’s safe to delete</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Reorganization &amp; coaching</h3>
+        <p>We make your phone simple to use again.</p>
+        <ul>
+          <li>Organize apps &amp; home screens</li>
+          <li>Set up folders &amp; photo albums</li>
+          <li>Show you tips &amp; tricks as we go</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Clean &amp; sanitize</h3>
+        <p>Finish with a physical clean so your phone looks and feels fresh.</p>
+        <ul>
+          <li>Exterior wipe-down &amp; polish</li>
+          <li>Case &amp; screen protector install (if provided)</li>
+          <li>Optional new case or glass (add-on)</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- PCs & Laptops -->
+  <section class="services-section" id="computers">
+    <div class="section-tag">Computers</div>
+    <h2 class="section-heading">Laptops &amp; desktop computers</h2>
+    <p class="section-intro">
+      From slow laptops to dusty gaming rigs, we bring them back to life with
+      hardware upgrades and deep tune-ups.
+    </p>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <h3>Performance tune-up</h3>
+        <p>Speed up slow systems and fix annoying issues.</p>
+        <ul>
+          <li>Startup optimization</li>
+          <li>Software clean-up</li>
+          <li>Driver &amp; Windows updates</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>SSD &amp; RAM upgrades</h3>
+        <p>Turn old systems into usable machines again.</p>
+        <ul>
+          <li>Replace hard drives with SSDs</li>
+          <li>Increase memory (RAM)</li>
+          <li>Data transfer &amp; backups available</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Deep cleaning &amp; thermal service</h3>
+        <p>Keep temps in check and extend component life.</p>
+        <ul>
+          <li>Dust removal from fans &amp; case</li>
+          <li>New thermal paste on CPU/GPU (where possible)</li>
+          <li>Airflow check &amp; cable tidy-up</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Virus &amp; malware removal</h3>
+        <p>Clean compromised systems and secure them.</p>
+        <ul>
+          <li>Malware/virus scans</li>
+          <li>Browser &amp; startup clean-up</li>
+          <li>Basic security recommendations</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Custom PCs -->
+  <section class="services-section" id="pc-builds">
+    <div class="section-tag">Custom builds</div>
+    <h2 class="section-heading">Custom gaming &amp; work PCs</h2>
+    <p class="section-intro">
+      Want a powerful gaming system or a workstation for CAD, design or content
+      creation? We design and build it around your budget and needs.
+    </p>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <h3>Consult &amp; parts planning</h3>
+        <p>We help you choose parts that make sense for what you actually do.</p>
+        <ul>
+          <li>Budget-based recommendations</li>
+          <li>AMD or Intel, NVIDIA or AMD GPUs</li>
+          <li>Future-proof upgrade paths</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Build &amp; setup</h3>
+        <p>Clean, showcase-style builds with airflow and cable management in mind.</p>
+        <ul>
+          <li>Professional cable management</li>
+          <li>Windows installation &amp; driver setup</li>
+          <li>Stress testing &amp; temperature checks</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>On-site delivery &amp; walkthrough</h3>
+        <p>We bring the PC to you and get you fully set up.</p>
+        <ul>
+          <li>Desk setup &amp; cable routing</li>
+          <li>Basic game or app installs (on request)</li>
+          <li>Simple training on how to use &amp; care for it</li>
+        </ul>
+      </article>
+    </div>
+
+    <table class="pricing-table">
+      <thead>
+      <tr><th>Build service</th><th>Typical labor</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Basic gaming / family PC build</td><td>$150</td></tr>
+      <tr><td>RGB / high-end gaming build</td><td>$200 – $300</td></tr>
+      <tr><td>Workstation / specialized build</td><td>$250 – $350</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">
+      Parts are paid separately. We’ll send you a list so you can order directly,
+      or we can source parts for you.
+    </p>
+  </section>
+
+  <!-- Consoles -->
+  <section class="services-section" id="consoles">
+    <div class="section-tag">Consoles</div>
+    <h2 class="section-heading">PlayStation &amp; Xbox services</h2>
+    <p class="section-intro">
+      Keep your consoles cool, quiet, and running smoothly so you can focus on
+      playing&mdash;not troubleshooting.
+    </p>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <h3>Dust &amp; fan cleaning</h3>
+        <p>Get rid of the jet-engine sound and overheating problems.</p>
+        <ul>
+          <li>Fan and heatsink dust removal</li>
+          <li>Case and vent cleaning</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Thermal paste refresh</h3>
+        <p>Renew old thermal paste to help with temps and noise.</p>
+        <ul>
+          <li>New high-quality thermal compound</li>
+          <li>Inspection for visible issues</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <h3>Storage upgrades</h3>
+        <p>More room for games without constantly uninstalling.</p>
+        <ul>
+          <li>External or internal drive setup (model-dependent)</li>
+          <li>Game transfer assistance</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Bundles / CTA -->
+  <section class="services-section" id="bundles">
+    <div class="section-tag">Bundles</div>
+    <h2 class="section-heading">Bundles &amp; household tech visits</h2>
+    <p class="section-intro">
+      Save money when we service multiple devices in the same visit.
+    </p>
+
+    <table class="pricing-table">
+      <thead>
+      <tr><th>Bundle</th><th>Starting at</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Phone + PC tune-up</td><td>$80</td></tr>
+      <tr><td>Phone + console cleaning</td><td>$100</td></tr>
+      <tr><td>Household visit (3–5 devices)</td><td>$150 – $200</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cta-band">
+      <p>
+        Ready to schedule a repair, clean-up, or new build in Gatesville, TX?
+        Send us a message with what you need and we’ll reply with options.
+      </p>
+      <a href="index.html#contact" class="btn-primary">Book a visit</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Art of Technology – Gatesville, TX.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
