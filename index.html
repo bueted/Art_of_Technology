@@ -16,8 +16,8 @@
     :root {
       --green: #1c7c54;
       --green-light: #e5f7ef;
-      --accent: #ff8fb4;
-      --accent-soft: #ffe3ee;
+      --accent: #d59b5a;        /* warm light brown */
+      --accent-soft: #fdecd4;   /* soft beige */
       --bg: #ffffff;
       --text: #20313a;
       --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
@@ -71,7 +71,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffe8f2, #b7f3cf);
+      background: radial-gradient(circle at 30% 30%, #fdecd4, #b7f3cf);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,9 +185,9 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #ffb36f);
+      background: linear-gradient(135deg, var(--accent), #f2c777);
       color: #fff;
-      box-shadow: 0 10px 22px rgba(255,143,180,0.45);
+      box-shadow: 0 10px 22px rgba(213,155,90,0.45);
     }
 
     .btn-secondary {
@@ -319,8 +319,8 @@
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: #a53a63;
-      border: 1px solid rgba(255,143,180,0.45);
+      color: #7a4c1e;
+      border: 1px solid rgba(213,155,90,0.45);
     }
 
     .about-card {
@@ -331,6 +331,20 @@
       box-shadow: var(--shadow-soft);
       font-size: 0.9rem;
       color: #264139;
+    }
+
+    .about-card ul {
+      list-style: none;
+      margin-top: 0.4rem;
+      padding-left: 0;
+    }
+
+    .about-card li::before {
+      content: "•";
+      color: var(--accent);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
 
     /* Contact */
@@ -359,20 +373,6 @@
       font-size: 0.9rem;
       margin-bottom: 0.7rem;
       color: #5b6872;
-    }
-
-    .contact-grid dl {
-      font-size: 0.9rem;
-    }
-
-    dt {
-      font-weight: 600;
-      color: #2a3c45;
-    }
-
-    dd {
-      margin: 0 0 0.5rem 0;
-      color: #4b5963;
     }
 
     .contact-form {
@@ -404,7 +404,7 @@
     .field input:focus,
     .field textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255,143,180,0.25);
+      box-shadow: 0 0 0 3px rgba(213,155,90,0.25);
     }
 
     textarea {
@@ -459,8 +459,7 @@
   <div class="nav-inner">
     <div class="brand">
       <div class="brand-logo">
-        <!-- Replace src with your actual logo file -->
-        <!-- <img src="art-of-technology-logo.png" alt="Art of Technology logo"> -->
+        <img src="AoT_Logo.png" alt="Art of Technology logo">
       </div>
       <div class="brand-text">Art of Technology</div>
     </div>
@@ -670,7 +669,6 @@
 </footer>
 
 <script>
-  // simple year updater
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
