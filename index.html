@@ -392,7 +392,8 @@
     }
 
     .field input,
-    .field textarea {
+    .field textarea,
+    .field select {
       border-radius: 11px;
       border: 1px solid #d6dde2;
       padding: 0.55rem 0.7rem;
@@ -402,7 +403,8 @@
     }
 
     .field input:focus,
-    .field textarea:focus {
+    .field textarea:focus,
+    .field select:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(213,155,90,0.25);
     }
@@ -631,25 +633,46 @@
       <div>
         <div class="contact-card">
           <h3>Quick contact form</h3>
-          <p>Form can be wired up later to email or a service like Formspree.</p>
-          <form class="contact-form">
+          <p>Fill this out and your message will go straight to our inbox.</p>
+
+          <!-- ✅ FORMSPREE-CONNECTED FORM -->
+          <form class="contact-form" action="https://formspree.io/f/movornrr" method="POST">
             <div class="field">
               <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your name">
+              <input id="name" name="name" type="text" placeholder="Your name" required>
             </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+
             <div class="field">
               <label for="phone">Phone number</label>
-              <input id="phone" type="tel" placeholder="Best number to reach you">
+              <input id="phone" name="phone" type="tel" placeholder="Best number to reach you">
             </div>
+
             <div class="field">
-              <label for="device">Device</label>
-              <input id="device" type="text" placeholder="iPhone 13, Samsung S21, gaming PC, etc.">
+              <label for="service">Service needed</label>
+              <select id="service" name="service">
+                <option value="Phone Repair">Phone Repair</option>
+                <option value="Screen Replacement">Screen Replacement</option>
+                <option value="Battery Replacement">Battery Replacement</option>
+                <option value="Phone Cleanup & Optimization">Phone Cleanup & Optimization</option>
+                <option value="Computer Tune-Up">Computer Tune-Up</option>
+                <option value="Virus/Malware Removal">Virus/Malware Removal</option>
+                <option value="Custom PC Build">Custom PC Build</option>
+                <option value="Console Cleaning">Console Cleaning</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
+
             <div class="field">
               <label for="message">What do you need help with?</label>
-              <textarea id="message" placeholder="Broken screen, slow phone, new PC build, etc."></textarea>
+              <textarea id="message" name="message" placeholder="Broken screen, slow phone, new PC build, etc." required></textarea>
             </div>
-            <button type="submit" class="btn-primary">Send (placeholder only)</button>
+
+            <button type="submit" class="btn-primary">Send Message</button>
           </form>
         </div>
       </div>
